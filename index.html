@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sankey Diagram Generator</title>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <button id="add-column-btn">+ 열 추가</button>
+      <label>
+        <input type="checkbox" id="text-toggle" checked>
+        텍스트 표시
+      </label>
+      <button id="save-json-btn">💾 저장</button>
+      <button id="load-json-btn">📂 불러오기</button>
+      <input type="file" id="load-file-input" accept=".json" style="display:none">
+      <button id="reset-btn">🗑️ 초기화</button>
+      <button id="download-svg-btn">SVG 다운로드</button>
+    </header>
+    <main>
+      <aside id="editor"></aside>
+      <section id="chart"></section>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
