@@ -61,7 +61,7 @@ export function renderSankey() {
 
   // Sankey 레이아웃
   const sankeyGenerator = d3Sankey()
-    .nodeWidth(20)
+    .nodeWidth(30)
     .nodePadding(15)
     .nodeAlign(sankeyLeft)
     .extent([[0, 0], [innerWidth, innerHeight]])
@@ -195,14 +195,14 @@ function renderNodesOnly(nodes) {
       g.append('rect')
         .attr('x', x)
         .attr('y', y)
-        .attr('width', 20)
+        .attr('width', 30)
         .attr('height', nodeHeight)
         .attr('fill', node.color || '#4a90d9')
         .attr('rx', 2)
 
       if (state.showText) {
         g.append('text')
-          .attr('x', x + 28)
+          .attr('x', x + 38)
           .attr('y', y + nodeHeight / 2)
           .attr('dy', '0.35em')
           .attr('fill', '#333')
