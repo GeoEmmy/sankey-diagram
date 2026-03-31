@@ -137,6 +137,19 @@ export function updateNodeColor(nodeId, color) {
   }
 }
 
+// 노드 이름 변경
+export function updateNodeName(nodeId, name) {
+  if (!name.trim()) return
+  for (const column of state.columns) {
+    const node = column.nodes.find(n => n.id === nodeId)
+    if (node) {
+      node.name = name.trim()
+      notify()
+      return
+    }
+  }
+}
+
 // 단일 링크 추가/업데이트
 export function addOrUpdateLink(sourceId, targetId, value = 10) {
   const existing = state.links.find(l => l.source === sourceId && l.target === targetId)

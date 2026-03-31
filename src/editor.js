@@ -6,6 +6,7 @@ import {
   removeNode,
   updateNodeColor,
   updateNodeValue,
+  updateNodeName,
   addOrUpdateLink,
   removeLink,
   updateLinkValue,
@@ -53,7 +54,7 @@ function renderNode(node, nextNodes, isFirstColumn) {
     <div class="node-item" data-node-id="${node.id}">
       <div class="node-main-row">
         <input type="color" class="node-color" value="${node.color}" data-node-id="${node.id}">
-        <span class="node-name">${node.name}</span>
+        <input type="text" class="node-name-edit" value="${node.name}" data-node-id="${node.id}">
         ${isFirstColumn ? `
           <input type="number" class="node-value" value="${node.value}" min="0" data-node-id="${node.id}" title="노드 수치">
         ` : `
@@ -147,6 +148,11 @@ function bindEditorEvents(container) {
   // 노드 색상 변경
   container.querySelectorAll('.node-color').forEach(input => {
     input.onchange = () => updateNodeColor(input.dataset.nodeId, input.value)
+  })
+
+  // 노드 이름 변경
+  container.querySelectorAll('.node-name-edit').forEach(input => {
+    input.onchange = () => updateNodeName(input.dataset.nodeId, input.value)
   })
 
   // 노드 수치 변경 (첫 열만)

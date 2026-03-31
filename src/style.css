@@ -134,6 +134,15 @@ main {
   font-weight: 500;
 }
 
+.node-name-edit {
+  flex: 1;
+  padding: 4px 6px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
 .node-value {
   width: 60px;
   padding: 4px 6px;
